@@ -40,7 +40,7 @@ INSERT INTO task_info VALUES (5, 'Bug', 'bug_5');
 ````
 ### Создаем запрос
 ````
-SELECT task_info.issue_key, task_info.name
+SELECT DISTINCT task_info.issue_key, task_info.name
 FROM task_info INNER JOIN task_status
 ON task_status.issue_key = task_info.issue_key
 WHERE (start_time BETWEEN '2021-04-01 00:00:00' AND '2021-04-30 23:59:59') AND type = 'Bug' AND status = 'in progress';
